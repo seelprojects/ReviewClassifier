@@ -269,6 +269,7 @@ namespace Review_Classifier
             {
                 reviewsDataGridView.Rows[selectedIndex].Selected = true;
                 reviewsDataGridView_CellClick(null, null, selectedIndex);
+                reviewsDataGridView.FirstDisplayedScrollingRowIndex = selectedIndex;
             }
         }
 
@@ -290,7 +291,18 @@ namespace Review_Classifier
             {
                 reviewsDataGridView.Rows[selectedIndex].Selected = true;
                 reviewsDataGridView_CellClick(null, null, selectedIndex);
+                reviewsDataGridView.FirstDisplayedScrollingRowIndex = selectedIndex;
             }
+        }
+
+        private void reviewsDataGridView_KeyUp(object sender, KeyEventArgs e)
+        {
+            PreviousButton_Click(null, null);
+        }
+
+        private void reviewsDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            NextButton_Click(null, null);
         }
     }
 }

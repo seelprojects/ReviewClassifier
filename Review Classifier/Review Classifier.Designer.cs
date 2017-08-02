@@ -59,6 +59,9 @@
             this.NextButton = new System.Windows.Forms.Button();
             this.PreviousButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.applicationsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).BeginInit();
             this.EmotionPanel.SuspendLayout();
@@ -84,7 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.applicationsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.applicationsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.applicationsDataGridView.Location = new System.Drawing.Point(8, 16);
+            this.applicationsDataGridView.Location = new System.Drawing.Point(8, 36);
             this.applicationsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.applicationsDataGridView.Name = "applicationsDataGridView";
             this.applicationsDataGridView.RowTemplate.Height = 28;
@@ -97,12 +100,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reviewsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.reviewsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reviewsDataGridView.Location = new System.Drawing.Point(8, 230);
+            this.reviewsDataGridView.Location = new System.Drawing.Point(8, 248);
             this.reviewsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.reviewsDataGridView.Name = "reviewsDataGridView";
             this.reviewsDataGridView.RowTemplate.Height = 28;
             this.reviewsDataGridView.Size = new System.Drawing.Size(1055, 212);
             this.reviewsDataGridView.TabIndex = 1;
+            this.reviewsDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.reviewsDataGridView_KeyDown);
+            this.reviewsDataGridView.KeyUp += new System.Windows.Forms.KeyEventHandler(this.reviewsDataGridView_KeyUp);
             // 
             // EmotionPanel
             // 
@@ -188,14 +193,14 @@
             this.FunctionalRequirementsPanel.Controls.Add(this.BugReportPanel);
             this.FunctionalRequirementsPanel.Location = new System.Drawing.Point(534, 599);
             this.FunctionalRequirementsPanel.Name = "FunctionalRequirementsPanel";
-            this.FunctionalRequirementsPanel.Size = new System.Drawing.Size(521, 100);
+            this.FunctionalRequirementsPanel.Size = new System.Drawing.Size(529, 100);
             this.FunctionalRequirementsPanel.TabIndex = 3;
             // 
             // FRMiscellaneousPanel
             // 
             this.FRMiscellaneousPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FRMiscellaneousPanel.Controls.Add(this.FRMiscellaneousCheckBox);
-            this.FRMiscellaneousPanel.Location = new System.Drawing.Point(360, 18);
+            this.FRMiscellaneousPanel.Location = new System.Drawing.Point(376, 18);
             this.FRMiscellaneousPanel.Name = "FRMiscellaneousPanel";
             this.FRMiscellaneousPanel.Size = new System.Drawing.Size(134, 64);
             this.FRMiscellaneousPanel.TabIndex = 2;
@@ -216,7 +221,7 @@
             // 
             this.UserRequirementPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.UserRequirementPanel.Controls.Add(this.UserRequirementCheckBox);
-            this.UserRequirementPanel.Location = new System.Drawing.Point(193, 18);
+            this.UserRequirementPanel.Location = new System.Drawing.Point(205, 18);
             this.UserRequirementPanel.Name = "UserRequirementPanel";
             this.UserRequirementPanel.Size = new System.Drawing.Size(134, 64);
             this.UserRequirementPanel.TabIndex = 2;
@@ -237,7 +242,7 @@
             // 
             this.BugReportPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BugReportPanel.Controls.Add(this.BugReportCheckBox);
-            this.BugReportPanel.Location = new System.Drawing.Point(22, 18);
+            this.BugReportPanel.Location = new System.Drawing.Point(33, 18);
             this.BugReportPanel.Name = "BugReportPanel";
             this.BugReportPanel.Size = new System.Drawing.Size(134, 64);
             this.BugReportPanel.TabIndex = 2;
@@ -377,16 +382,16 @@
             // 
             this.CommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommentTextBox.Location = new System.Drawing.Point(13, 457);
+            this.CommentTextBox.Location = new System.Drawing.Point(13, 494);
             this.CommentTextBox.Multiline = true;
             this.CommentTextBox.Name = "CommentTextBox";
-            this.CommentTextBox.Size = new System.Drawing.Size(1050, 124);
+            this.CommentTextBox.Size = new System.Drawing.Size(1050, 93);
             this.CommentTextBox.TabIndex = 4;
             // 
             // NextButton
             // 
             this.NextButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.NextButton.Location = new System.Drawing.Point(146, 22);
+            this.NextButton.Location = new System.Drawing.Point(160, 22);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(115, 64);
             this.NextButton.TabIndex = 5;
@@ -397,7 +402,7 @@
             // PreviousButton
             // 
             this.PreviousButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PreviousButton.Location = new System.Drawing.Point(18, 22);
+            this.PreviousButton.Location = new System.Drawing.Point(11, 22);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(122, 64);
             this.PreviousButton.TabIndex = 6;
@@ -413,14 +418,44 @@
             this.panel1.Controls.Add(this.NextButton);
             this.panel1.Location = new System.Drawing.Point(777, 712);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 112);
+            this.panel1.Size = new System.Drawing.Size(286, 112);
             this.panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Select Application";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Select Review";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 475);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Selected Review";
             // 
             // ReviewClassifier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 836);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CommentTextBox);
             this.Controls.Add(this.NFRPanel);
@@ -497,6 +532,9 @@
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Button PreviousButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

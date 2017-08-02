@@ -19,3 +19,9 @@ C:\Users\Nishant\Desktop\NFR Paper\Visual Studio Projects\Review Classifier\Revi
 C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\bin\Debug\Review Classifier.exe.config
 C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\obj\Debug\Review Classifier.exe
 C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\obj\Debug\Review Classifier.pdb
+C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\bin\Debug\Review Classifier.exe
+C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\bin\Debug\Review Classifier.pdb
+C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\obj\Debug\Review Classifier.csprojResolveAssemblyReference.cache
+C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\obj\Debug\Review_Classifier.ReviewClassifier.resources
+C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\obj\Debug\Review_Classifier.Properties.Resources.resources
+C:\Users\Nishant\Source\Repos\ReviewClassifier\Review Classifier\obj\Debug\Review Classifier.csproj.GenerateResource.Cache
