@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.infoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.applicationsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).BeginInit();
             this.EmotionPanel.SuspendLayout();
@@ -448,11 +449,22 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Selected Review";
             // 
+            // infoLabel
+            // 
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Location = new System.Drawing.Point(405, 475);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(207, 13);
+            this.infoLabel.TabIndex = 11;
+            this.infoLabel.Text = "Counter update on next and previous click";
+            this.infoLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // ReviewClassifier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 836);
+            this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -535,6 +547,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label infoLabel;
     }
 }
 

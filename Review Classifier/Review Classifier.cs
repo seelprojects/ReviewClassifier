@@ -271,6 +271,13 @@ namespace Review_Classifier
                 reviewsDataGridView_CellClick(null, null, selectedIndex);
                 reviewsDataGridView.FirstDisplayedScrollingRowIndex = selectedIndex;
             }
+
+           //Counter update on next and Previous Click 
+            try
+            {
+                infoLabel.Text = "" + selectedIndex + " of " + reviewsDataGridView.Rows.Count;
+            }
+            catch (Exception) { }
         }
 
         private void NextButton_Click(object sender, EventArgs e)
@@ -293,6 +300,13 @@ namespace Review_Classifier
                 reviewsDataGridView_CellClick(null, null, selectedIndex);
                 reviewsDataGridView.FirstDisplayedScrollingRowIndex = selectedIndex;
             }
+
+            //Counter update on next and Previous Click 
+            try
+            {
+                infoLabel.Text = "" + selectedIndex + " of " + reviewsDataGridView.Rows.Count;
+            }
+            catch (Exception) { }
         }
 
         private void reviewsDataGridView_KeyUp(object sender, KeyEventArgs e)
