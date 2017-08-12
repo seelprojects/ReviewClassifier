@@ -383,6 +383,7 @@
             // 
             this.CommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommentTextBox.Location = new System.Drawing.Point(13, 494);
             this.CommentTextBox.Multiline = true;
             this.CommentTextBox.Name = "CommentTextBox";
