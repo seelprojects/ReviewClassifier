@@ -12,6 +12,15 @@ namespace Review_Classifier
     public static class SqlHelpers
     {
 
+
+
+        public static string GetMainTableName()
+        {
+            var tableName = "MAIN";
+            return tableName;
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -95,10 +104,10 @@ namespace Review_Classifier
 		                    NFR_Usability as 'NFR.Usab', 
 		                    NFR_Miscellaneous as 'NFR.Misc' 
                     FROM 
-	                    MAIN 
+	                    {0} 
                     WHERE 
-	                    ApplicationID={0}
-                        ", appID);
+	                    ApplicationID={1}
+                        ", GetMainTableName(),  appID);
             return sql;
         }
 
@@ -117,12 +126,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             E_Positive = {0} 
                         WHERE 
                             MainID = {1}", 
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -141,12 +150,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             E_Negative = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -165,12 +174,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             E_Neutral = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -189,12 +198,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             FR_BugReport = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -213,12 +222,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             FR_UserRequirement = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -237,12 +246,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             FR_Miscellaneous = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -261,12 +270,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             NFR_Dependability = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -286,12 +295,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             NFR_Performance = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -310,12 +319,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             NFR_Usability = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -334,12 +343,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             NFR_Supportability = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
 
@@ -358,12 +367,12 @@ namespace Review_Classifier
             }
             var sql = String.Format(@"
                         Update 
-                            Main 
+                            {2} 
                         SET 
                             NFR_Miscellaneous = {0} 
                         WHERE 
                             MainID = {1}",
-                            value, MainID);
+                            value, MainID, GetMainTableName());
             return sql;
         }
     }
